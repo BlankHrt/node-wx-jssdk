@@ -1,2 +1,2 @@
-const wx = require('./index.min.js')
-console.log(wx)
+const WX = require('./index.min.js')
+console.log(WX)

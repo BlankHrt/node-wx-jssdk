@@ -9,8 +9,8 @@ const { parseString } = require('xml2js')
 // const uuidv1 = require('uuid/v1');
 // const { client } = require('../utils/oss');
 
-let wx = {}
-wx.login = ({ code, appid, secret }) => {
+let WX = {}
+WX.login = ({ code, appid, secret }) => {
     return new Promise((res, rej) => {
         if (code && appid && secret) {
             var param = "?grant_type=authorization_code" + "&appid=" + appid + "&secret=" + secret + "&js_code=" + code;
@@ -29,7 +29,7 @@ wx.login = ({ code, appid, secret }) => {
     })
 };
 
-wx.decrypt = ({ appid, session_key, encryptedData, iv }) => {
+WX.decrypt = ({ appid, session_key, encryptedData, iv }) => {
     return new Promise((res, rej) => {
         if (appid && session_key && encryptedData && iv) {
             const pc = new WXBizDataCrypt(appid, session_key)
@@ -62,7 +62,7 @@ const get_client_ip = (req) => {
     return ip;
 };
 
-wx.pay = ({ appid, body, mch_id, notify_url, openid, spbill_create_ip, total_fee, KEY }) => {
+WX.pay = ({ appid, body, mch_id, notify_url, openid, spbill_create_ip, total_fee, KEY }) => {
     const params = req.body
     const out_trade_no = generateNumber()
     const nonce_str = randomstring.generate({
@@ -146,7 +146,7 @@ wx.pay = ({ appid, body, mch_id, notify_url, openid, spbill_create_ip, total_fee
 
 // GET https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET
 
-wx.getAccessToken = ({ appid, secret }) => {
+WX.getAccessToken = ({ appid, secret }) => {
     return new Promise((res, rej) => {
         if (appid && secret) {
             var param = "?grant_type=client_credential" + "&appid=" + appid + "&secret=" + secret;
@@ -165,7 +165,7 @@ wx.getAccessToken = ({ appid, secret }) => {
     })
 }
 
-wx.generateQrcode = ({ scene, page, access_token }) => {
+WX.generateQrcode = ({ scene, page, access_token }) => {
     var postData = JSON.stringify({
         'scene': scene,
         'page': page,
