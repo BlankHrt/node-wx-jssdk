@@ -1,11 +1,11 @@
 ### 安装 
 ```
-cnpm i -S node-WX-jssdk
+cnpm i -S node-wx-jssdk
 ```
 
 ### 引用 
 ```
-const WX = require('node-WX-jssdk')
+const WX = require('node-wx-jssdk')
 ```
 ### 返回值全部是promise 请自行await 或 then
 ### 微信登录[参考文档](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html)
