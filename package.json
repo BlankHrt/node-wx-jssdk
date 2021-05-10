@@ -1,0 +1,41 @@
+{
+  "name": "node-wx-jssdk",
+  "version": "1.0.3",
+  "description": "微信小程序支付,获取二维码,登录,解析手机号,获取access_token",
+  "keywords": [
+    "微信小程序支付",
+    "微信小程序获取二维码",
+    "微信小程序登录",
+    "微信小程序解析手机号",
+    "微信小程序获取access_token"
+  ],
+  "main": "index.min.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlankHrt/node-wx-jssdk"
+  },
+  "author": "lqh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BlankHrt/node-wx-jssdk/issues"
+  },
+  "homepage": "https://github.com/BlankHrt/node-wx-jssdk#readme",
+  "dependencies": {
+    "randomstring": "^1.1.5",
+    "request": "^2.88.2",
+    "uglify-js": "^3.13.5",
+    "uuid": "^3.3.2",
+    "xml2js": "^0.4.23"
+  },
+  "files": [
+    "lib/*",
+    "index.min.js",
+    "test.js"
+  ]
+}
