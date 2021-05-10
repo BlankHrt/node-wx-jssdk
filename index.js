@@ -165,7 +165,7 @@ wx.getAccessToken = ({ appid, secret }) => {
     })
 }
 
-generateQrcode = (scene, page, access_token) => {
+generateQrcode = ({ scene, page, access_token }) => {
     var postData = JSON.stringify({
         'scene': scene,
         'page': page,
