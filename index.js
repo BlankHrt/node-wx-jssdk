@@ -121,7 +121,7 @@ WX.pay = ({ appid, body, mch_id, notify_url, openid, spbill_create_ip, total_fee
                     paySign: paySign,
                     total_fee: total_fee,
                     signType: 'MD5',
-                    number: number
+                    number: out_trade_no
                 }
                 if (error) {
                     rej(error)

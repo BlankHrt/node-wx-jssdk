@@ -1,6 +1,6 @@
 {
   "name": "node-wx-jssdk",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "微信小程序支付,获取二维码,登录,解析手机号,获取access_token",
   "keywords": [
     "微信小程序支付",
