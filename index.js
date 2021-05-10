@@ -50,20 +50,8 @@ const generateNumber = () => {
     return newDate + Math.round(Math.random() * (2 ** 30)).toString().substr(2, 5)
 }
 
-const get_client_ip = (req) => {
-    var ip = req.headers['x-forwarded-for'] ||
-        req.ip ||
-        req.connection.remoteAddress ||
-        req.socket.remoteAddress ||
-        req.connection.socket.remoteAddress || '';
-    if (ip.split(',').length > 0) {
-        ip = ip.split(',')[0]
-    }
-    return ip;
-};
 
-WX.pay = ({ appid, body, mch_id, notify_url, openid, spbill_create_ip, total_fee, KEY }) => {
-    const params = req.body
+WX.pay = ({ appid, body, mch_id, notify_url, openid, spbill_create_ip, total_fee, KEY, sign_type }) => {
     const out_trade_no = generateNumber()
     const nonce_str = randomstring.generate({
         charset: 'alphanumeric',
@@ -92,7 +80,7 @@ WX.pay = ({ appid, body, mch_id, notify_url, openid, spbill_create_ip, total_fee
 
     signData = signData.slice(1) + "&key=" + KEY;
 
-    var sign_type = params.sign_type || "MD5";
+    var sign_type = sign_type || "MD5";
     if (sign_type == "HMAC-SHA256") {
         var sign = hmac_sha256(signData, wkey) + '';
         sign = sign.toUpperCase();

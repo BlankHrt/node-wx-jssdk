@@ -18,7 +18,7 @@ WX.decrypt({appid, session_key, encryptedData, iv})
 ```
 ### 微信支付 [参考文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_5_1.shtml)
 ```
-WX.pay({ appid, body, mch_id, notify_url, openid, spbill_create_ip, total_fee, KEY }).then(res=>...)
+WX.pay({ appid, body, mch_id, notify_url, openid, spbill_create_ip, total_fee, KEY,sign_type }).then(res=>...)
 ``` 
 ### 获取AccessToken[参考文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/access-token/auth.getAccessToken.html)
 ```
